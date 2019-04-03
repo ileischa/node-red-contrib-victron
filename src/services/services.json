@@ -1323,20 +1323,108 @@
     },
     "input-ess": {
         "vebus": [
-            null,
-            null,
-            null
+            {
+                "path": "/Hub4/DisableFeedIn",
+                "type": "enum",
+                "name": "Disable feed in",
+                "enum": {
+                    "0": "No",
+                    "1": "Yes (disable feedin)"
+                }
+            },
+            {
+                "path": "/Hub4/DisableCharge",
+                "type": "float",
+                "name": "Name for /Hub4/DisableCharge",
+                "enum": {
+                    "0": "No",
+                    "1": "Yes (disable charging)"
+                }
+            },
+            {
+                "path": "/Hub4/Lx/AcPowerSetpoint",
+                "type": "integer",
+                "name": "Name for /Hub4/Lx/AcPowerSetpoint (W)"
+            }
         ],
         "settings": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
+            {
+                "path": "/Settings/CGwacs/Hub4Mode",
+                "type": "enum",
+                "name": "ESS Mode",
+                "enum": {
+                    "1": "Optimized mode or 'keep batteries charged' and phase compensation enabled",
+                    "2": "Optimized mode or 'keep batteries charged' and phase compensation disabled",
+                    "3": "External control"
+                }
+            },
+            {
+                "path": "/Settings/CGwacs/AcPowerSetPoint",
+                "type": "???",
+                "name": "ESS Grid power set-point (???)"
+            },
+            {
+                "path": "/Settings/CGwacs/BatteryLife/MinimumSocLimit",
+                "type": "???",
+                "name": "Minimum ESS SoC limit (???)"
+            },
+            {
+                "path": "/Settings/CGwacs/BatteryLife/State",
+                "type": "enum",
+                "name": "ESS State",
+                "enum": {
+                    "1": "BatteryLife enabled (GUI controlled)",
+                    "2": "Optimized Mode /w BatteryLife: self consumption",
+                    "3": "Optimized Mode /w BatteryLife: self consumption, SoC exceeds 85%",
+                    "4": "Optimized Mode /w BatteryLife: self consumption, SoC at 100%",
+                    "5": "Optimized Mode /w BatteryLife: SoC below dynamic SoC limit",
+                    "6": "Optimized Mode /w BatteryLife: SoC has been below SoC limit for more than 24 hours. Charging the battery (5A)",
+                    "7": "Optimized Mode /w BatteryLife: Inverter/Charger is in sustain mode",
+                    "8": "Optimized Mode /w BatteryLife: recharging, SoC dropped by 5% or more below the minimum SoC",
+                    "9": "'Keep batteries charged' mode is enabled",
+                    "10": "Optimized mode w/o BatteryLife: self consumption, SoC at or above minimum SoC",
+                    "11": "Optimized mode w/o BatteryLife: self consumption, SoC is below minimum SoC",
+                    "12": "Optimized mode w/o BatteryLife: recharging, SoC dropped by 5% or more below minimum SoC"
+                }
+            },
+            {
+                "path": "/Settings/CGwacs/Hub4Mode",
+                "type": "enum",
+                "name": "ESS Mode",
+                "enum": {
+                    "1": "Optimized mode or 'keep batteries charged' and phase compensation enabled",
+                    "2": "Optimized mode or 'keep batteries charged' and phase compensation disabled",
+                    "3": "External control"
+                }
+            },
+            {
+                "path": "/Settings/CGwacs/MaxDischargePower",
+                "type": "float",
+                "name": "Max inverter power in the GUI (W)"
+            },
+            {
+                "path": "/Settings/CGwacs/OvervoltageFeedIn",
+                "type": "enum",
+                "name": "Feedback solar charger excess power",
+                "enum": {
+                    "0": "No (enable feedin)",
+                    "1": "Yes (disable feedin)"
+                }
+            },
+            {
+                "path": "/Settings/CGwacs/PreventFeedback",
+                "type": "enum",
+                "name": "Fronius Zero Feed-in",
+                "enum": {
+                    "0": "No",
+                    "1": "Yes (prevent feedback from Fronius PV-inverters)"
+                }
+            },
+            {
+                "path": "/Settings/SystemSetup/MaxChargeCurrent",
+                "type": "float",
+                "name": "Charge current limit (A)"
+            }
         ]
     },
     "output-relay": {
@@ -1514,19 +1602,109 @@
     },
     "output-ess": {
         "vebus": [
-            null,
-            null,
-            null
+            {
+                "path": "/Hub4/DisableFeedIn",
+                "type": "enum",
+                "name": "Disable feed in",
+                "enum": {
+                    "0": "No",
+                    "1": "Yes (disable feedin)"
+                },
+                "writable": true
+            },
+            {
+                "path": "/Hub4/DisableCharge",
+                "type": "float",
+                "name": "Name for /Hub4/DisableCharge",
+                "enum": {
+                    "0": "No",
+                    "1": "Yes (disable charging)"
+                },
+                "writable": true
+            },
+            {
+                "path": "/Hub4/Lx/AcPowerSetpoint",
+                "type": "integer",
+                "name": "Name for /Hub4/Lx/AcPowerSetpoint (W)",
+                "writable": true
+            }
         ],
         "settings": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
+            {
+                "path": "/Settings/CGwacs/AcPowerSetPoint",
+                "type": "???",
+                "name": "ESS Grid power set-point (???)",
+                "writable": true
+            },
+            {
+                "path": "/Settings/CGwacs/BatteryLife/MinimumSocLimit",
+                "type": "???",
+                "name": "Minimum ESS SoC limit (???)",
+                "writable": true
+            },
+            {
+                "path": "/Settings/CGwacs/BatteryLife/State",
+                "type": "enum",
+                "name": "ESS State",
+                "enum": {
+                    "1": "BatteryLife enabled (GUI controlled)",
+                    "2": "Optimized Mode /w BatteryLife: self consumption",
+                    "3": "Optimized Mode /w BatteryLife: self consumption, SoC exceeds 85%",
+                    "4": "Optimized Mode /w BatteryLife: self consumption, SoC at 100%",
+                    "5": "Optimized Mode /w BatteryLife: SoC below dynamic SoC limit",
+                    "6": "Optimized Mode /w BatteryLife: SoC has been below SoC limit for more than 24 hours. Charging the battery (5A)",
+                    "7": "Optimized Mode /w BatteryLife: Inverter/Charger is in sustain mode",
+                    "8": "Optimized Mode /w BatteryLife: recharging, SoC dropped by 5% or more below the minimum SoC",
+                    "9": "'Keep batteries charged' mode is enabled",
+                    "10": "Optimized mode w/o BatteryLife: self consumption, SoC at or above minimum SoC",
+                    "11": "Optimized mode w/o BatteryLife: self consumption, SoC is below minimum SoC",
+                    "12": "Optimized mode w/o BatteryLife: recharging, SoC dropped by 5% or more below minimum SoC"
+                },
+                "writable": true
+            },
+            {
+                "path": "/Settings/CGwacs/Hub4Mode",
+                "type": "enum",
+                "name": "ESS Mode",
+                "enum": {
+                    "1": "Optimized mode or 'keep batteries charged' and phase compensation enabled",
+                    "2": "Optimized mode or 'keep batteries charged' and phase compensation disabled",
+                    "3": "External control"
+                },
+                "writable": true
+            },
+            {
+                "path": "/Settings/CGwacs/MaxDischargePower",
+                "type": "float",
+                "name": "Max inverter power in the GUI (W)",
+                "writable": true
+            },
+            {
+                "path": "/Settings/CGwacs/OvervoltageFeedIn",
+                "type": "enum",
+                "name": "Feedback solar charger excess power",
+                "enum": {
+                    "0": "No (enable feedin)",
+                    "1": "Yes (disable feedin)"
+                },
+                "writable": true
+            },
+            {
+                "path": "/Settings/CGwacs/PreventFeedback",
+                "type": "enum",
+                "name": "Fronius Zero Feed-in",
+                "enum": {
+                    "0": "No",
+                    "1": "Yes (prevent feedback from Fronius PV-inverters)"
+                },
+                "writable": true
+            },
+            {
+                "path": "/Settings/SystemSetup/MaxChargeCurrent",
+                "type": "float",
+                "name": "Charge current limit (A)",
+                "writable": true
+            }
         ]
     }
 }
