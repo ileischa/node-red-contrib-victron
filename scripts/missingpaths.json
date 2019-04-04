@@ -114,9 +114,21 @@
                 "1": "Yes"
             }
         },
-        "/Hub4/Lx/AcPowerSetpoint": {
-            "description": "AC Power setpoint",
-            "dbusPath": "/Hub4/Lx/AcPowerSetpoint",
+        "/Hub4/L1/AcPowerSetpoint": {
+            "description": "AC Power L1 setpoint",
+            "dbusPath": "/Hub4/L1/AcPowerSetpoint",
+            "dataType": "integer",
+            "unit": "W"
+        },
+        "/Hub4/L2/AcPowerSetpoint": {
+            "description": "AC Power L2 setpoint",
+            "dbusPath": "/Hub4/L2/AcPowerSetpoint",
+            "dataType": "integer",
+            "unit": "W"
+        },
+        "/Hub4/L3/AcPowerSetpoint": {
+            "description": "AC Power L3 setpoint",
+            "dbusPath": "/Hub4/L3/AcPowerSetpoint",
             "dataType": "integer",
             "unit": "W"
         }
@@ -465,19 +477,19 @@
         "/Settings/CGwacs/AcPowerSetPoint": {
             "description": "Grid set-point",
             "dbusPath": "/Settings/CGwacs/AcPowerSetPoint",
-            "dataType": "float",
+            "dataType": "integer",
             "unit": "W"
         },
         "/Settings/CGwacs/BatteryLife/MinimumSocLimit": {
             "description": "Minimum Discharge SOC",
             "dbusPath": "/Settings/CGwacs/BatteryLife/MinimumSocLimit",
-            "dataType": "float",
+            "dataType": "integer",
             "unit": "%"
         },
         "/Settings/CGwacs/BatteryLife/SocLimit": {
             "description": "BatteryLife algorithm output",
             "dbusPath": "/Settings/CGwacs/BatteryLife/SocLimit",
-            "dataType": "float",
+            "dataType": "integer",
             "unit": "%"
         },
         "/Settings/CGwacs/BatteryLife/State": {
@@ -503,13 +515,13 @@
         "/Settings/CGwacs/MaxChargePower": {
             "description": "Max charge power",
             "dbusPath": "/Settings/CGwacs/MaxChargePower",
-            "dataType": "float",
+            "dataType": "integer",
             "unit": "W"
         },
         "/Settings/CGwacs/MaxDischargePower": {
             "description": "Max inverter power",
             "dbusPath": "/Settings/CGwacs/MaxDischargePower",
-            "dataType": "float",
+            "dataType": "integer",
             "unit": "W"
         },
         "/Settings/CGwacs/RunWithoutGridMeter": {
