@@ -97,26 +97,25 @@
             }
         },
         "/Hub4/DisableFeedIn": {
-            "description": "Disable feed in",
+            "description": "Disable feed-in",
             "dbusPath": "/Hub4/DisableFeedIn",
             "dataType": "enum",
             "enum": {
                 "0": "No",
-                "1": "Yes (disable feedin)"
+                "1": "Yes"
             }
         },
         "/Hub4/DisableCharge": {
-            "description": "Name for /Hub4/DisableCharge",
+            "description": "Disable charge",
             "dbusPath": "/Hub4/DisableCharge",
-            "dataType": "float",
-            "unit": "",
+            "dataType": "enum",
             "enum": {
                 "0": "No",
-                "1": "Yes (disable charging)"
+                "1": "Yes"
             }
         },
         "/Hub4/Lx/AcPowerSetpoint": {
-            "description": "Name for /Hub4/Lx/AcPowerSetpoint",
+            "description": "AC Power setpoint",
             "dbusPath": "/Hub4/Lx/AcPowerSetpoint",
             "dataType": "integer",
             "unit": "W"
@@ -454,7 +453,7 @@
     },
     "settings": {
         "/Settings/CGwacs/Hub4Mode": {
-            "description": "Mode",
+            "description": "ESS mode",
             "dbusPath": "/Settings/CGwacs/Hub4Mode",
             "dataType": "enum",
             "enum": {
@@ -464,19 +463,23 @@
             }
         },
         "/Settings/CGwacs/AcPowerSetPoint": {
-            "description": "Grid power set-point",
+            "description": "Grid set-point",
             "dbusPath": "/Settings/CGwacs/AcPowerSetPoint",
-            "dataType": "???",
-            "unit": "???"
+            "dataType": "float",
+            "unit": "W"
         },
         "/Settings/CGwacs/BatteryLife/MinimumSocLimit": {
-            "description": "Minimum SoC limit",
+            "description": "Minimum Discharge SOC",
             "dbusPath": "/Settings/CGwacs/BatteryLife/MinimumSocLimit",
-            "dataType": "???",
-            "unit": "???"
+            "dataType": "float"
+        },
+        "/Settings/CGwacs/BatteryLife/SocLimit": {
+            "description": "BatteryLife algorithm output",
+            "dbusPath": "/Settings/CGwacs/BatteryLife/SocLimit",
+            "dataType": "float"
         },
         "/Settings/CGwacs/BatteryLife/State": {
-            "description": "State",
+            "description": "ESS state",
             "dbusPath": "/Settings/CGwacs/BatteryLife/State",
             "dataType": "enum",
             "enum": {
@@ -495,28 +498,43 @@
 
             }
         },
+        "/Settings/CGwacs/MaxChargePower": {
+            "description": "Max charge power",
+            "dbusPath": "/Settings/CGwacs/MaxChargePower",
+            "dataType": "float",
+            "unit": "W"
+        },
         "/Settings/CGwacs/MaxDischargePower": {
-            "description": "Max inverter power in the GUI",
+            "description": "Max inverter power",
             "dbusPath": "/Settings/CGwacs/MaxDischargePower",
             "dataType": "float",
             "unit": "W"
         },
+        "/Settings/CGwacs/RunWithoutGridMeter": {
+            "description": "Grid meter installed",
+            "dbusPath": "/Settings/CGwacs/RunWithoutGridMeter",
+            "dataType": "enum",
+            "enum": {
+                "0": "No",
+                "1": "Yes"
+            }
+        },
         "/Settings/CGwacs/OvervoltageFeedIn": {
-            "description": "Feedback solar charger excess power",
+            "description": "Feed-in excess solar charger power",
             "dbusPath": "/Settings/CGwacs/OvervoltageFeedIn",
             "dataType": "enum",
             "enum": {
-                "0": "No (enable feedin)",
-                "1": "Yes (disable feedin)"
+                "0": "No",
+                "1": "Yes"
             }
         },
         "/Settings/CGwacs/PreventFeedback": {
-            "description": "Fronius Zero Feed-in",
+            "description": "PV Inverter zero feed-in (on/off)",
             "dbusPath": "/Settings/CGwacs/PreventFeedback",
             "dataType": "enum",
             "enum": {
                 "0": "No",
-                "1": "Yes (prevent feedback from Fronius PV-inverters)"
+                "1": "Yes"
             }
         },
         "/Settings/SystemSetup/MaxChargeCurrent": {
