@@ -471,12 +471,14 @@
         "/Settings/CGwacs/BatteryLife/MinimumSocLimit": {
             "description": "Minimum Discharge SOC",
             "dbusPath": "/Settings/CGwacs/BatteryLife/MinimumSocLimit",
-            "dataType": "float"
+            "dataType": "float",
+            "unit": "%"
         },
         "/Settings/CGwacs/BatteryLife/SocLimit": {
             "description": "BatteryLife algorithm output",
             "dbusPath": "/Settings/CGwacs/BatteryLife/SocLimit",
-            "dataType": "float"
+            "dataType": "float",
+            "unit": "%"
         },
         "/Settings/CGwacs/BatteryLife/State": {
             "description": "ESS state",
